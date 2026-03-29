@@ -3,60 +3,81 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sirco APT Repo</title>
+    <title>Sirco Packages</title>
     <style>
       :root{
-        --bg:#0b1220;
-        --panel:#0f1a2e;
-        --panel2:#0c1629;
-        --text:#e6eefc;
-        --muted:#a9b8d6;
-        --accent:#7c5cff;
-        --accent2:#22d3ee;
-        --border:rgba(255,255,255,.10);
-        --shadow:0 20px 60px rgba(0,0,0,.45);
+        --bg:#f4f1ea;
+        --paper:#fffdf8;
+        --panel:#ffffff;
+        --text:#1f2937;
+        --muted:#5f6b7a;
+        --accent:#0f766e;
+        --accent-soft:#dff5f0;
+        --border:#dfd6ca;
+        --shadow:0 14px 34px rgba(60, 44, 24, .10);
         --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-        --sans:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",Arial,"Apple Color Emoji","Segoe UI Emoji";
+        --sans:Georgia,"Times New Roman",Times,serif;
+        --sans-ui:"Segoe UI",Roboto,Arial,sans-serif;
       }
       *{box-sizing:border-box}
       body{
         margin:0;
-        font-family:var(--sans);
+        font-family:var(--sans-ui);
         color:var(--text);
         background:
-          radial-gradient(1200px 800px at 20% 10%, rgba(124,92,255,.25), transparent 60%),
-          radial-gradient(900px 700px at 85% 25%, rgba(34,211,238,.18), transparent 55%),
-          linear-gradient(180deg, var(--bg), #070b14);
+          radial-gradient(900px 520px at top left, rgba(201, 179, 140, .20), transparent 60%),
+          linear-gradient(180deg, #f8f5ef, var(--bg));
         min-height:100vh;
       }
-      .wrap{max-width:980px;margin:0 auto;padding:48px 20px 72px}
+      .wrap{max-width:1040px;margin:0 auto;padding:40px 20px 72px}
       .hero{
         display:flex;gap:18px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;
-        padding:22px 22px 18px;border:1px solid var(--border);border-radius:18px;
-        background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+        padding:28px;border:1px solid var(--border);border-radius:22px;
+        background:
+          linear-gradient(135deg, rgba(15,118,110,.08), rgba(255,255,255,.70)),
+          var(--paper);
         box-shadow:var(--shadow);
       }
-      h1{margin:0;font-size:28px;letter-spacing:.2px}
-      .sub{margin:6px 0 0;color:var(--muted);line-height:1.45}
+      h1{
+        margin:0;
+        font-family:var(--sans);
+        font-size:42px;
+        font-weight:700;
+        letter-spacing:.2px;
+      }
+      .sub{margin:10px 0 0;color:var(--muted);line-height:1.6;max-width:56ch}
       .badge{
-        font-family:var(--mono);font-size:12px;color:rgba(230,238,252,.92);
-        background:linear-gradient(90deg, rgba(124,92,255,.35), rgba(34,211,238,.25));
-        border:1px solid rgba(255,255,255,.16);
-        padding:8px 10px;border-radius:999px;white-space:nowrap;
+        font-family:var(--mono);
+        font-size:12px;
+        color:var(--accent);
+        background:var(--accent-soft);
+        border:1px solid rgba(15,118,110,.18);
+        padding:8px 12px;
+        border-radius:999px;
+        white-space:nowrap;
       }
-      .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:18px}
-      @media (min-width:900px){.grid{grid-template-columns:1.25fr .75fr}}
+      .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:18px}
+      @media (min-width:920px){.grid{grid-template-columns:1.15fr .85fr}}
       .card{
-        border:1px solid var(--border);border-radius:18px;background:rgba(15,26,46,.72);
-        box-shadow:0 18px 40px rgba(0,0,0,.35);
+        border:1px solid var(--border);
+        border-radius:20px;
+        background:var(--panel);
+        box-shadow:var(--shadow);
       }
-      .card h2{margin:0;padding:16px 18px;border-bottom:1px solid var(--border);font-size:15px;color:rgba(230,238,252,.92)}
+      .card h2{
+        margin:0;
+        padding:18px 20px;
+        border-bottom:1px solid var(--border);
+        font-family:var(--sans);
+        font-size:24px;
+        font-weight:700;
+      }
       .card .body{padding:16px 18px}
       .code{
-        background:rgba(8,13,24,.65);
-        border:1px solid rgba(255,255,255,.10);
-        border-radius:14px;
-        padding:14px 14px;
+        background:#fbfaf7;
+        border:1px solid var(--border);
+        border-radius:16px;
+        padding:16px;
         overflow:auto;
         font-family:var(--mono);
         font-size:13px;
@@ -64,22 +85,50 @@
       }
       .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
       .btn{
-        appearance:none;border:1px solid rgba(255,255,255,.16);
-        background:linear-gradient(180deg, rgba(124,92,255,.35), rgba(124,92,255,.18));
-        color:var(--text);padding:10px 12px;border-radius:12px;font-weight:600;
+        appearance:none;
+        border:1px solid rgba(15,118,110,.20);
+        background:var(--accent);
+        color:#fff;
+        padding:10px 14px;
+        border-radius:999px;
+        font-weight:600;
         cursor:pointer;
       }
-      .btn:hover{border-color:rgba(255,255,255,.26)}
-      .muted{color:var(--muted);font-size:13px;line-height:1.5;margin:10px 0 0}
-      .list{margin:0;padding-left:18px;color:var(--muted);font-size:13px;line-height:1.55}
-      a{color:#b8c8ff}
-      .k{color:rgba(230,238,252,.92)}
+      .btn:hover{filter:brightness(.95)}
+      .muted{color:var(--muted);font-size:14px;line-height:1.6;margin:10px 0 0}
+      .list{margin:0;padding-left:20px;color:var(--muted);font-size:14px;line-height:1.7}
+      a{color:var(--accent)}
+      .k{color:var(--text)}
       .warn{
         margin-top:10px;
-        background:rgba(255,177,66,.10);
-        border:1px solid rgba(255,177,66,.25);
-        padding:10px 12px;border-radius:12px;
-        color:rgba(255,230,200,.95);
+        background:#fff8ea;
+        border:1px solid #ecd39d;
+        padding:12px 14px;
+        border-radius:14px;
+        color:#6d5520;
+        font-size:13px;
+      }
+      .packages{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:10px;
+        margin-top:14px;
+      }
+      .pkg{
+        border:1px solid var(--border);
+        border-radius:14px;
+        padding:12px 14px;
+        background:#fcfbf8;
+      }
+      .pkg strong{
+        display:block;
+        font-family:var(--mono);
+        font-size:14px;
+        margin-bottom:4px;
+      }
+      .footer{
+        margin-top:18px;
+        color:var(--muted);
         font-size:13px;
       }
     </style>
@@ -88,18 +137,18 @@
     <div class="wrap">
       <div class="hero">
         <div>
-          <h1>Sirco APT Repo</h1>
-          <p class="sub">Static APT repository for <span class="k">sirco-*</span> meta-packages.</p>
+          <h1>Sirco Packages</h1>
+          <p class="sub">Official APT repository for the Sirco distro package sets. Use this repository to install the public meta-packages for development, gaming, AI, and full workstation setups.</p>
         </div>
         <div class="badge">https://sirco-dev.github.io/sircron-setup/</div>
       </div>
 
       <div class="grid">
         <div class="card">
-          <h2>Install</h2>
+          <h2>Add Repository</h2>
           <div class="body">
             <div class="row" style="justify-content:space-between">
-              <div class="muted" style="margin:0">Copy/paste into a terminal:</div>
+              <div class="muted" style="margin:0">Run this on any Debian or Ubuntu system:</div>
               <button class="btn" id="copy">Copy</button>
             </div>
             <pre class="code" id="snippet"><code>sudo tee /etc/apt/sources.list.d/sirco.list >/dev/null &lt;&lt;'EOF'
@@ -112,14 +161,27 @@ sudo apt-get install -y sirco-full</code></pre>
         </div>
 
         <div class="card">
-          <h2>Troubleshooting</h2>
+          <h2>Available Packs</h2>
           <div class="body">
-            <p class="muted" style="margin-top:0">If <code>apt-get update</code> 404s, check these URLs exist:</p>
-            <ul class="list">
-              <li><a href="./dists/stable/Release">./dists/stable/Release</a></li>
-              <li><a href="./dists/stable/main/binary-amd64/Packages">./dists/stable/main/binary-amd64/Packages</a></li>
-            </ul>
-            <p class="muted">GitHub Pages must be set to serve from <code>main</code> + <code>/docs</code>.</p>
+            <div class="packages">
+              <div class="pkg">
+                <strong>sirco-dev</strong>
+                Development tools and build essentials.
+              </div>
+              <div class="pkg">
+                <strong>sirco-gaming</strong>
+                Gaming tools such as Lutris, Wine, and related utilities.
+              </div>
+              <div class="pkg">
+                <strong>sirco-ai</strong>
+                Python, notebooks, and common AI/data packages.
+              </div>
+              <div class="pkg">
+                <strong>sirco-full</strong>
+                Installs the full Sirco package set.
+              </div>
+            </div>
+            <p class="footer">Repository files: <a href="./dists/stable/Release">Release</a> and <a href="./dists/stable/main/binary-amd64/Packages">Packages</a>.</p>
           </div>
         </div>
       </div>

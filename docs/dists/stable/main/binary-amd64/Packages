@@ -5,10 +5,10 @@ Maintainer: Sirco Team <info@gace.space>
 Installed-Size: 9
 Depends: python3.12 | python3.11 | python3.10 | python3, python-is-python3 | python3, python3-pip, python3-venv, python3-dev, pipx, jupyter-notebook | jupyter, python3-numpy, python3-scipy, python3-pandas, python3-matplotlib, python3-skimage, python3-requests, python3-yaml
 Filename: pool/main/sirco-ai_1.0_all.deb
-Size: 2238
-MD5sum: 0b2d6fbf96e5426bd081cf46ba3c69e8
-SHA1: 8f3afd700e736d3a68ed7aad38d64a288ac5c24b
-SHA256: f33120204ffa0cf52107f371f593daf633f7bff13d54452440cb7b405f342c91
+Size: 2230
+MD5sum: 9a47d71773970d3b00dfc7704c24c92b
+SHA1: fd4fc3bac8d39c705f54df5f8f7f8310c60c5ac1
+SHA256: bf2c6fcefab4af2871cfd407fd8c011a9f294d362f6f17d12e536d45805a8c40
 Section: misc
 Priority: optional
 Multi-Arch: foreign
@@ -23,10 +23,10 @@ Maintainer: Sirco Team <info@gace.space>
 Installed-Size: 10
 Depends: build-essential, make, pkg-config, cmake, ninja-build, git, git-lfs, openssh-client, curl, wget, ca-certificates, gnupg, lsb-release, software-properties-common, zip, unzip, tar, gzip, bzip2, xz-utils, jq, ripgrep, fd-find, fzf, tree, less, man-db, manpages, manpages-dev, vim | neovim, tmux, shellcheck, python3.12 | python3.11 | python3.10 | python3, python-is-python3 | python3, python3-pip, python3-venv, python3-dev, python3-full | python3, pipx, virtualenv, nodejs, npm, yarnpkg, openjdk-21-jdk | openjdk-17-jdk | default-jdk, openjdk-21-jre | openjdk-17-jre | default-jre, maven, gradle, golang-go, rustc, cargo, ruby-full, php-cli, composer, sqlite3, postgresql-client, default-mysql-client | mysql-client, redis-tools, docker.io, docker-compose-plugin | docker-compose
 Filename: pool/main/sirco-dev_1.0_all.deb
-Size: 2810
-MD5sum: 0940ddac79d94a58c7fc7cee6fb7a965
-SHA1: f2e695f3049df14f3392e1574fbfc486bb4019ff
-SHA256: f211b0d8907d5bd2642dc33d221f567a6b3460cbcdebfb6e042382bdc5508ea5
+Size: 2814
+MD5sum: 853babaf927b0e758915fde533bbd306
+SHA1: af1454ada11f4343266b5b143e698b16def141fb
+SHA256: eee643f829a4590b21b9948553eae80562e881f3bc5b6747a6bd61d4039ccef4
 Section: misc
 Priority: optional
 Multi-Arch: foreign
@@ -41,10 +41,10 @@ Maintainer: Sirco Team <info@gace.space>
 Installed-Size: 9
 Depends: sirco-dev, sirco-gaming, sirco-ai
 Filename: pool/main/sirco-full_1.0_all.deb
-Size: 2038
-MD5sum: 96d22abb80f25ce5a547c036b072626b
-SHA1: efe2d871d74fc4ab3f8a9ccca13084eddb5e4fe9
-SHA256: d17de6e21b3d4e85b7b9614fdee41eb24025cf9392be87d0157a7f26e00da402
+Size: 2036
+MD5sum: 4276750621a75ada89c01fac375fc2e4
+SHA1: 6d5c11f3c44e696719ff7e6aa22e4b4e44b2485f
+SHA256: 4d05c445e2d53807b6c07262f522ce22424bee2efdb023a4a964d12776c428e7
 Section: misc
 Priority: optional
 Multi-Arch: foreign
@@ -60,10 +60,10 @@ Installed-Size: 9
 Depends: lutris, wine, winetricks, gamemode, mesa-utils, vulkan-tools
 Recommends: steam-installer | steam
 Filename: pool/main/sirco-gaming_1.0_all.deb
-Size: 2140
-MD5sum: f137d5cad3dc60cfc78539cbc9d3a1f8
-SHA1: 8a259abac9e2ccfdf2159546d28588694f0111c5
-SHA256: 05c2e99d19fe35ec43598cd8ee51a26ee2476b2a0ffd7a831c9e88c965bd2e41
+Size: 2136
+MD5sum: 1bab065eae2415d252d84dff1780d54f
+SHA1: 626a8cc61adb26f86ef67751037084f59f5129c8
+SHA256: fbdb6dd48d0a283500445c4ad7c15fd35ff77f2d98633c6479068d51db10ab3e
 Section: misc
 Priority: optional
 Multi-Arch: foreign
