@@ -26,9 +26,10 @@ touch "$repo_out/.nojekyll"
 "$repo_root/scripts/build-debs.sh"
 
 shopt -s nullglob
-debs=( "$repo_root/dist"/*.deb )
+# Pick up the meta-packages we build (typically `sirco-*_1.0_all.deb`).
+debs=( "$repo_root"/sirco-*.deb )
 if (( ${#debs[@]} == 0 )); then
-  echo "No .deb files found in $repo_root/dist" >&2
+  echo "No .deb files found in $repo_root" >&2
   exit 1
 fi
 

@@ -3,7 +3,7 @@ set -euo pipefail
 
 repo_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 equivs_dir="$repo_root/packages/equivs"
-out_dir="${OUT_DIR:-$repo_root/dist}"
+out_dir="${OUT_DIR:-$repo_root}"
 
 if ! command -v equivs-build >/dev/null 2>&1; then
   echo "Missing 'equivs-build'. Install it with: sudo apt-get update && sudo apt-get install -y equivs" >&2
