@@ -1,0 +1,18 @@
+Section: misc
+Priority: optional
+Standards-Version: 3.9.2
+
+Package: sirco-desktop
+Version: 1.0
+Maintainer: Sirco Team <info@gace.space>
+Depends: xorg, xserver-xorg, gnome-shell, gnome-terminal, gnome-control-center,
+ gdm3, nautilus, network-manager, network-manager-gnome, pipewire-audio,
+ firefox, vlc, eog, evince, file-roller, fonts-noto-color-emoji,
+ gsettings-desktop-schemas
+Recommends: gnome-software, gnome-tweaks, gnome-shell-extension-manager,
+ yaru-theme-gtk, yaru-theme-icon
+Postinst: sirco-desktop.postinst
+Files: sirco-desktop-setup.sh /usr/lib/sirco/
+Description: Sirco Desktop Pack (GNOME)
+ Installs the Sirco GNOME desktop, core desktop apps, and display manager.
+ Legal contact: legal@gace.space

@@ -5,7 +5,7 @@ Standards-Version: 3.9.2
 Package: sirco-full
 Version: 1.0
 Maintainer: Sirco Team <info@gace.space>
-Depends: sirco-dev, sirco-gaming, sirco-ai
+Depends: sirco-dev, sirco-gaming, sirco-ai, sirco-desktop
 Description: Sirco Full Pack (meta-package)
- Installs all Sirco packs (dev + gaming + ai).
+ Installs all Sirco packs (desktop + dev + gaming + ai).
  Legal contact: legal@gace.space

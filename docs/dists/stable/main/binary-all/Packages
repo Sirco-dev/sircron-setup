@@ -2,18 +2,38 @@ Package: sirco-ai
 Version: 1.0
 Architecture: all
 Maintainer: Sirco Team <info@gace.space>
-Installed-Size: 9
-Depends: python3.12 | python3.11 | python3.10 | python3, python-is-python3 | python3, python3-pip, python3-venv, python3-dev, pipx, jupyter-notebook | jupyter, python3-numpy, python3-scipy, python3-pandas, python3-matplotlib, python3-skimage, python3-requests, python3-yaml
+Installed-Size: 10
+Depends: python3.12 | python3.11 | python3.10 | python3, python-is-python3 | python3, python3-pip, python3-venv, python3-dev, pipx, python3-notebook | jupyter-notebook | jupyter, python3-ipykernel, python3-numpy, python3-scipy, python3-pandas, python3-matplotlib, python3-seaborn, python3-skimage, python3-opencv, python3-sympy, python3-networkx, python3-joblib, python3-plotly, python3-tqdm, python3-pil, python3-bs4, python3-lxml, python3-requests, python3-yaml, python3-nltk, python3-pytest
+Recommends: python3-sklearn, python3-xgboost, python3-sentencepiece
 Filename: pool/main/sirco-ai_1.0_all.deb
-Size: 2230
-MD5sum: 9a47d71773970d3b00dfc7704c24c92b
-SHA1: fd4fc3bac8d39c705f54df5f8f7f8310c60c5ac1
-SHA256: bf2c6fcefab4af2871cfd407fd8c011a9f294d362f6f17d12e536d45805a8c40
+Size: 2430
+MD5sum: 8604f2fa86f45e6da052d0824fadc5e8
+SHA1: 63f88fc705b8b34a5a6a54b3aa6b76ca4d8dfdda
+SHA256: 92789d3c81583ede55bea4bea14c3346417366a7be69a28eb8a8d1b1f48d1101
 Section: misc
 Priority: optional
 Multi-Arch: foreign
 Description: Sirco AI Pack (meta-package)
- Installs a lightweight Python AI/notebook starter set (Debian/Ubuntu).
+ Installs a broader Python AI, data science, notebook, and training starter set.
+ Legal contact: legal@gace.space
+
+Package: sirco-desktop
+Version: 1.0
+Architecture: all
+Maintainer: Sirco Team <info@gace.space>
+Installed-Size: 14
+Depends: xorg, xserver-xorg, gnome-shell, gnome-terminal, gnome-control-center, gdm3, nautilus, network-manager, network-manager-gnome, pipewire-audio, firefox, vlc, eog, evince, file-roller, fonts-noto-color-emoji, gsettings-desktop-schemas
+Recommends: gnome-software, gnome-tweaks, gnome-shell-extension-manager, yaru-theme-gtk, yaru-theme-icon
+Filename: pool/main/sirco-desktop_1.0_all.deb
+Size: 2828
+MD5sum: d42b579f688674557341d2d1171452c5
+SHA1: b46167b5c4948a67e0f60b2c69a0bf57629ff404
+SHA256: e93945bed46883d7932a13255310a3877fc7e4b5308009832055e37e81e5ac09
+Section: misc
+Priority: optional
+Multi-Arch: foreign
+Description: Sirco Desktop Pack (GNOME)
+ Installs the Sirco GNOME desktop, core desktop apps, and display manager.
  Legal contact: legal@gace.space
 
 Package: sirco-dev
@@ -21,12 +41,13 @@ Version: 1.0
 Architecture: all
 Maintainer: Sirco Team <info@gace.space>
 Installed-Size: 10
-Depends: build-essential, make, pkg-config, cmake, ninja-build, git, git-lfs, openssh-client, curl, wget, ca-certificates, gnupg, lsb-release, software-properties-common, zip, unzip, tar, gzip, bzip2, xz-utils, jq, ripgrep, fd-find, fzf, tree, less, man-db, manpages, manpages-dev, vim | neovim, tmux, shellcheck, python3.12 | python3.11 | python3.10 | python3, python-is-python3 | python3, python3-pip, python3-venv, python3-dev, python3-full | python3, pipx, virtualenv, nodejs, npm, yarnpkg, openjdk-21-jdk | openjdk-17-jdk | default-jdk, openjdk-21-jre | openjdk-17-jre | default-jre, maven, gradle, golang-go, rustc, cargo, ruby-full, php-cli, composer, sqlite3, postgresql-client, default-mysql-client | mysql-client, redis-tools, docker.io, docker-compose-plugin | docker-compose
+Depends: build-essential, make, pkg-config, cmake, ninja-build, meson, autoconf, automake, libtool, ccache, git, git-lfs, openssh-client, curl, wget, ca-certificates, gnupg, lsb-release, software-properties-common, zip, unzip, tar, gzip, bzip2, xz-utils, zstd, rsync, jq, yq, ripgrep, fd-find, fzf, tree, less, bat, htop, btop, man-db, manpages, manpages-dev, vim | neovim, tmux, shellcheck, universal-ctags, python3.12 | python3.11 | python3.10 | python3, python-is-python3 | python3, python3-pip, python3-venv, python3-dev, python3-full | python3, pipx, virtualenv, nodejs, npm, yarnpkg, openjdk-21-jdk | openjdk-17-jdk | default-jdk, openjdk-21-jre | openjdk-17-jre | default-jre, maven, gradle, golang-go, rustc, cargo, gfortran, clang, clang-format, clang-tidy, lldb, gdb, valgrind, nasm, yasm, flex, bison, gettext, ruby-full, php-cli, composer, sqlite3, postgresql-client, default-mysql-client | mysql-client, redis-tools, docker.io, docker-compose-plugin | docker-compose
+Recommends: direnv, gh, httpie, graphviz, imagemagick, pandoc, mariadb-client, podman, qemu-system, qemu-utils, virt-manager, remmina, openvpn, wireguard-tools, ffmpeg, mpv
 Filename: pool/main/sirco-dev_1.0_all.deb
-Size: 2814
-MD5sum: 853babaf927b0e758915fde533bbd306
-SHA1: af1454ada11f4343266b5b143e698b16def141fb
-SHA256: eee643f829a4590b21b9948553eae80562e881f3bc5b6747a6bd61d4039ccef4
+Size: 3208
+MD5sum: 9cb0829a2868173c9fe42048488756ed
+SHA1: 110ed198f3617beaa704eb95216749614c96f7ff
+SHA256: afaaa6c68ff89271be95c7993cae94b086bf728cdf48cde08cdf80a169284f50
 Section: misc
 Priority: optional
 Multi-Arch: foreign
@@ -39,17 +60,17 @@ Version: 1.0
 Architecture: all
 Maintainer: Sirco Team <info@gace.space>
 Installed-Size: 9
-Depends: sirco-dev, sirco-gaming, sirco-ai
+Depends: sirco-dev, sirco-gaming, sirco-ai, sirco-desktop
 Filename: pool/main/sirco-full_1.0_all.deb
-Size: 2036
-MD5sum: 4276750621a75ada89c01fac375fc2e4
-SHA1: 6d5c11f3c44e696719ff7e6aa22e4b4e44b2485f
-SHA256: 4d05c445e2d53807b6c07262f522ce22424bee2efdb023a4a964d12776c428e7
+Size: 2060
+MD5sum: 3c8a8f10ad100669e13f261c7b36b734
+SHA1: c788cb361891c8b0772de6cf58e45651b248d93b
+SHA256: 998336ca6328343137269bf57ce9a4572b53d0b019d1e05cfe83c14373bd3115
 Section: misc
 Priority: optional
 Multi-Arch: foreign
 Description: Sirco Full Pack (meta-package)
- Installs all Sirco packs (dev + gaming + ai).
+ Installs all Sirco packs (desktop + dev + gaming + ai).
  Legal contact: legal@gace.space
 
 Package: sirco-gaming
@@ -60,10 +81,10 @@ Installed-Size: 9
 Depends: lutris, wine, winetricks, gamemode, mesa-utils, vulkan-tools
 Recommends: steam-installer | steam
 Filename: pool/main/sirco-gaming_1.0_all.deb
-Size: 2136
-MD5sum: 1bab065eae2415d252d84dff1780d54f
-SHA1: 626a8cc61adb26f86ef67751037084f59f5129c8
-SHA256: fbdb6dd48d0a283500445c4ad7c15fd35ff77f2d98633c6479068d51db10ab3e
+Size: 2134
+MD5sum: d03d8d78bb5eeb588a966f68592523a1
+SHA1: 01065f71f9aa9b7fa8522f7c3d0a0a5a0cacf666
+SHA256: c3e988d62b0234a6a44590171acf53e8c999021846bee2e9769fd41c443798ed
 Section: misc
 Priority: optional
 Multi-Arch: foreign

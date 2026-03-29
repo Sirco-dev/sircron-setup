@@ -7,9 +7,12 @@ Version: 1.0
 Maintainer: Sirco Team <info@gace.space>
 Depends: python3.12 | python3.11 | python3.10 | python3, python-is-python3 | python3,
  python3-pip, python3-venv, python3-dev, pipx,
- jupyter-notebook | jupyter,
- python3-numpy, python3-scipy, python3-pandas, python3-matplotlib, python3-skimage,
- python3-requests, python3-yaml
+ python3-notebook | jupyter-notebook | jupyter, python3-ipykernel,
+ python3-numpy, python3-scipy, python3-pandas, python3-matplotlib, python3-seaborn,
+ python3-skimage, python3-opencv, python3-sympy, python3-networkx, python3-joblib,
+ python3-plotly, python3-tqdm, python3-pil, python3-bs4, python3-lxml,
+ python3-requests, python3-yaml, python3-nltk, python3-pytest
+Recommends: python3-sklearn, python3-xgboost, python3-sentencepiece
 Description: Sirco AI Pack (meta-package)
- Installs a lightweight Python AI/notebook starter set (Debian/Ubuntu).
+ Installs a broader Python AI, data science, notebook, and training starter set.
  Legal contact: legal@gace.space

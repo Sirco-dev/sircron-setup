@@ -1,0 +1,12 @@
+#!/bin/sh
+set -eu
+
+case "${1:-}" in
+  configure)
+    if [ -f /usr/lib/sirco/sirco-desktop-setup.sh ]; then
+      /bin/sh /usr/lib/sirco/sirco-desktop-setup.sh
+    fi
+    ;;
+esac
+
+exit 0

@@ -2,6 +2,13 @@
 
 Debian/Ubuntu meta-packages + GitHub Pages–hosted APT repo for the "Sirco" tool packs.
 
+Packages:
+- `sirco-desktop` for the GNOME desktop, display manager, and core desktop apps
+- `sirco-dev` for development tools
+- `sirco-gaming` for gaming tools
+- `sirco-ai` for AI/data/notebook tools
+- `sirco-full` for everything above
+
 Build locally (Debian/Ubuntu):
 
 ```bash
@@ -26,6 +33,12 @@ sudo apt-get update
 sudo apt-get install -y sirco-full
 ```
 
+Desktop-only install:
+
+```bash
+sudo apt-get install -y sirco-desktop
+```
+
 If `apt-get update` 404s, verify these URLs exist:
 
 - `https://sirco-dev.github.io/sircron-setup/dists/stable/Release`
@@ -36,3 +49,9 @@ If install fails due to Steam/i386 dependencies, install without recommended pac
 ```bash
 sudo apt-get install -y --no-install-recommends sirco-full
 ```
+
+`sirco-desktop` includes a package post-install step that safely tries to:
+- set the system default target to `graphical.target`
+- enable `gdm3`
+- enable `NetworkManager`
+- write `/etc/sirco/desktop-profile`

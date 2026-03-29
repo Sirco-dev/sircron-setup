@@ -21,7 +21,7 @@ Environment:
 
 Notes:
   - 'debs' builds meta-package .deb files from ./packages/equivs/*.control into the repo root.
-  - 'repo' builds an APT repository under REPO_OUT (default: ./public) suitable for GitHub Pages.
+  - 'repo' builds an APT repository under REPO_OUT (default: ./docs) suitable for GitHub Pages.
 EOF
 }
 
@@ -45,8 +45,6 @@ build_debs() {
 
   local tmp
   tmp="$(mktemp -d)"
-  cleanup() { rm -rf "$tmp"; }
-  trap cleanup EXIT
 
   cp -a "$equivs_dir/." "$tmp/"
 
@@ -72,6 +70,8 @@ build_debs() {
   for deb in "${debs[@]}"; do
     mv -f "$deb" "$repo_root/"
   done
+
+  rm -rf "$tmp"
 
   echo "Wrote .deb files to: $repo_root (sirco-*.deb)"
 }
@@ -271,7 +271,7 @@ EOF
       <div class="hero">
         <div>
           <h1>Sirco Packages</h1>
-          <p class="sub">Official APT repository for the Sirco distro package sets. Use this repository to install the public meta-packages for development, gaming, AI, and full workstation setups.</p>
+          <p class="sub">Official APT repository for the Sirco distro package sets. Use this repository to install the public meta-packages for desktop, development, gaming, AI, and full workstation setups.</p>
         </div>
         <div class="badge">https://sirco-dev.github.io/sircron-setup/</div>
       </div>
@@ -297,6 +297,10 @@ sudo apt-get install -y sirco-full</code></pre>
           <h2>Available Packs</h2>
           <div class="body">
             <div class="packages">
+              <div class="pkg">
+                <strong>sirco-desktop</strong>
+                GNOME desktop, login manager, and core desktop applications.
+              </div>
               <div class="pkg">
                 <strong>sirco-dev</strong>
                 Development tools and build essentials.
