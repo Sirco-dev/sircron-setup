@@ -1,0 +1,14 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Sirco APT Repo</title>
+<h1>Sirco APT Repo</h1>
+<p>This is a static APT repository for <code>sirco-*</code> meta-packages.</p>
+<h2>Install</h2>
+<pre><code>sudo tee /etc/apt/sources.list.d/sirco.list &lt;&lt;EOF
+deb [trusted=yes] https://&lt;owner&gt;.github.io/&lt;repo&gt;/ stable main
+EOF
+
+sudo apt-get update
+sudo apt-get install sirco-full
+</code></pre>
+<p>Note: this repo is unsigned; <code>[trusted=yes]</code> is required unless you add signing.</p>

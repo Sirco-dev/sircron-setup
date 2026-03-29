@@ -1,0 +1,32 @@
+Architectures: amd64 all
+Codename: stable
+Components: main
+Date: Sun, 29 Mar 2026 21:39:47 +0000
+Description: Sirco APT Repo
+Label: Sirco
+Origin: Sirco
+Suite: stable
+MD5Sum:
+ 19adff6cc72f9f96b32e2dceafe03e13              166 Release
+ a31b64d2c1eddd8f48a26bce2693a8d5             3250 main/binary-all/Packages
+ fe5025e6ddefb89f33d625c64af1a1eb             1336 main/binary-all/Packages.gz
+ a31b64d2c1eddd8f48a26bce2693a8d5             3250 main/binary-amd64/Packages
+ fe5025e6ddefb89f33d625c64af1a1eb             1336 main/binary-amd64/Packages.gz
+SHA1:
+ 5e58b35dad54e5a3a3575d1a03d251c11899df16              166 Release
+ 0d5fa29217e770d4d87f7b58edfd3c3c1e173caf             3250 main/binary-all/Packages
+ 00cbd61e0b63014f67863e42b5d0032d9d3f2c1a             1336 main/binary-all/Packages.gz
+ 0d5fa29217e770d4d87f7b58edfd3c3c1e173caf             3250 main/binary-amd64/Packages
+ 00cbd61e0b63014f67863e42b5d0032d9d3f2c1a             1336 main/binary-amd64/Packages.gz
+SHA256:
+ 2722c24cf3c40c00dfd16ef6bceee1b8768348f1138527b4222d1aa4312aaf27              166 Release
+ 3919a18c9e6f9488bdc77b691d75cf342e94c8e761b446f7c59479ef015aa426             3250 main/binary-all/Packages
+ 7b883a071314231eef1d0f2383f86616b853b82e7a1c81af656c2ce71a75c011             1336 main/binary-all/Packages.gz
+ 3919a18c9e6f9488bdc77b691d75cf342e94c8e761b446f7c59479ef015aa426             3250 main/binary-amd64/Packages
+ 7b883a071314231eef1d0f2383f86616b853b82e7a1c81af656c2ce71a75c011             1336 main/binary-amd64/Packages.gz
+SHA512:
+ decad7f16c635daf481f5a63970c357cef8a9167d0493699dd37711d2e3cc94493b5b23e8c9a55a352fe9ad65c3e43974890e90816664a939557d7d48170f8e5              166 Release
+ c6a4baf833f298a7fdf559f7113c2faca77a0c7d8286fde05a2b4194ac1b79a58a54cd7f88f48c5743d828c16871fa45359dd4c8c9ed8a103eb3c085cd917d85             3250 main/binary-all/Packages
+ 79fda2fb9f6ef7b8d8b741b625af2bfc73b02ed6b915b3d661aaa10a6be4b1b2e0ae78b71ec255486c26f8e7b5004d4cb9cf23aa015f81c947cb39d9229349db             1336 main/binary-all/Packages.gz
+ c6a4baf833f298a7fdf559f7113c2faca77a0c7d8286fde05a2b4194ac1b79a58a54cd7f88f48c5743d828c16871fa45359dd4c8c9ed8a103eb3c085cd917d85             3250 main/binary-amd64/Packages
+ 79fda2fb9f6ef7b8d8b741b625af2bfc73b02ed6b915b3d661aaa10a6be4b1b2e0ae78b71ec255486c26f8e7b5004d4cb9cf23aa015f81c947cb39d9229349db             1336 main/binary-amd64/Packages.gz

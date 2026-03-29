@@ -11,7 +11,11 @@ sudo apt-get install -y equivs dpkg-dev apt-utils
 ./scripts/build.sh repo
 ```
 
-Make sure GitHub Pages is enabled for this repo (Settings → Pages → Source: **GitHub Actions**) and that the workflow ran.
+`./scripts/build.sh repo` writes the static APT repo into `docs/` by default.
+
+GitHub Pages options:
+- **Manual (no Actions):** Settings → Pages → Build and deployment → Source: **Deploy from a branch** → Branch: `main` → Folder: `/docs`
+- **GitHub Actions:** Settings → Pages → Source: **GitHub Actions** (workflow: `.github/workflows/pages.yml`)
 
 ```bash
 sudo tee /etc/apt/sources.list.d/sirco.list >/dev/null <<'EOF'

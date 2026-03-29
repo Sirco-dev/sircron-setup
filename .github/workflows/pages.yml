@@ -23,6 +23,8 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Install build deps
         run: |
@@ -35,15 +37,15 @@ jobs:
 
       - name: Sanity check repo files
         run: |
-          test -s public/dists/stable/Release
-          test -s public/dists/stable/InRelease
-          test -s public/dists/stable/main/binary-amd64/Packages
-          test -s public/dists/stable/main/binary-all/Packages
+          test -s docs/dists/stable/Release
+          test -s docs/dists/stable/InRelease
+          test -s docs/dists/stable/main/binary-amd64/Packages
+          test -s docs/dists/stable/main/binary-all/Packages
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: docs
 
   deploy:
     environment:

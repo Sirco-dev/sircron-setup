@@ -5,7 +5,8 @@ repo_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
 
 suite="${SUITE:-stable}"
 component="${COMPONENT:-main}"
-repo_out="${REPO_OUT:-$repo_root/public}"
+# Default to `docs/` so you can commit it and serve via GitHub Pages (branch: main, folder: /docs).
+repo_out="${REPO_OUT:-$repo_root/docs}"
 
 usage() {
   cat <<EOF
