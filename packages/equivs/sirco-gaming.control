@@ -5,8 +5,8 @@ Standards-Version: 3.9.2
 Package: sirco-gaming
 Version: 1.0
 Maintainer: Sirco Team <info@gace.space>
-Depends: steam-installer | steam, lutris, wine, winetricks, gamemode,
- mesa-utils, vulkan-tools
+Depends: lutris, wine, winetricks, gamemode, mesa-utils, vulkan-tools
+Recommends: steam-installer | steam
 Description: Sirco Gaming Pack (meta-package)
  Installs common gaming tools (Debian/Ubuntu).
  Legal contact: legal@gace.space

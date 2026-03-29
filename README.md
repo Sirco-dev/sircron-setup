@@ -13,9 +13,10 @@ sudo apt-get install -y equivs dpkg-dev apt-utils
 
 `./scripts/build.sh repo` writes the static APT repo into `docs/` by default.
 
-GitHub Pages options:
-- **Manual (no Actions):** Settings → Pages → Build and deployment → Source: **Deploy from a branch** → Branch: `main` → Folder: `/docs`
-- **GitHub Actions:** Settings → Pages → Source: **GitHub Actions** (workflow: `.github/workflows/pages.yml`)
+GitHub Pages setup (manual):
+- Settings → Pages → Build and deployment → Source: **Deploy from a branch**
+- Branch: `main`
+- Folder: `/docs`
 
 ```bash
 sudo tee /etc/apt/sources.list.d/sirco.list >/dev/null <<'EOF'
@@ -29,3 +30,9 @@ If `apt-get update` 404s, verify these URLs exist:
 
 - `https://sirco-dev.github.io/sircron-setup/dists/stable/Release`
 - `https://sirco-dev.github.io/sircron-setup/dists/stable/main/binary-amd64/Packages`
+
+If install fails due to Steam/i386 dependencies, install without recommended packages:
+
+```bash
+sudo apt-get install -y --no-install-recommends sirco-full
+```

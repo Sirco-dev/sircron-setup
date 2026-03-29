@@ -132,19 +132,150 @@ EOF
 
   cat >"index.html" <<'HTML'
 <!doctype html>
-<meta charset="utf-8" />
-<title>Sirco APT Repo</title>
-<h1>Sirco APT Repo</h1>
-<p>This is a static APT repository for <code>sirco-*</code> meta-packages.</p>
-<h2>Install</h2>
-<pre><code>sudo tee /etc/apt/sources.list.d/sirco.list &lt;&lt;EOF
-deb [trusted=yes] https://&lt;owner&gt;.github.io/&lt;repo&gt;/ stable main
-EOF
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sirco APT Repo</title>
+    <style>
+      :root{
+        --bg:#0b1220;
+        --panel:#0f1a2e;
+        --panel2:#0c1629;
+        --text:#e6eefc;
+        --muted:#a9b8d6;
+        --accent:#7c5cff;
+        --accent2:#22d3ee;
+        --border:rgba(255,255,255,.10);
+        --shadow:0 20px 60px rgba(0,0,0,.45);
+        --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+        --sans:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",Arial,"Apple Color Emoji","Segoe UI Emoji";
+      }
+      *{box-sizing:border-box}
+      body{
+        margin:0;
+        font-family:var(--sans);
+        color:var(--text);
+        background:
+          radial-gradient(1200px 800px at 20% 10%, rgba(124,92,255,.25), transparent 60%),
+          radial-gradient(900px 700px at 85% 25%, rgba(34,211,238,.18), transparent 55%),
+          linear-gradient(180deg, var(--bg), #070b14);
+        min-height:100vh;
+      }
+      .wrap{max-width:980px;margin:0 auto;padding:48px 20px 72px}
+      .hero{
+        display:flex;gap:18px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;
+        padding:22px 22px 18px;border:1px solid var(--border);border-radius:18px;
+        background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+        box-shadow:var(--shadow);
+      }
+      h1{margin:0;font-size:28px;letter-spacing:.2px}
+      .sub{margin:6px 0 0;color:var(--muted);line-height:1.45}
+      .badge{
+        font-family:var(--mono);font-size:12px;color:rgba(230,238,252,.92);
+        background:linear-gradient(90deg, rgba(124,92,255,.35), rgba(34,211,238,.25));
+        border:1px solid rgba(255,255,255,.16);
+        padding:8px 10px;border-radius:999px;white-space:nowrap;
+      }
+      .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:18px}
+      @media (min-width:900px){.grid{grid-template-columns:1.25fr .75fr}}
+      .card{
+        border:1px solid var(--border);border-radius:18px;background:rgba(15,26,46,.72);
+        box-shadow:0 18px 40px rgba(0,0,0,.35);
+      }
+      .card h2{margin:0;padding:16px 18px;border-bottom:1px solid var(--border);font-size:15px;color:rgba(230,238,252,.92)}
+      .card .body{padding:16px 18px}
+      .code{
+        background:rgba(8,13,24,.65);
+        border:1px solid rgba(255,255,255,.10);
+        border-radius:14px;
+        padding:14px 14px;
+        overflow:auto;
+        font-family:var(--mono);
+        font-size:13px;
+        line-height:1.45;
+      }
+      .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+      .btn{
+        appearance:none;border:1px solid rgba(255,255,255,.16);
+        background:linear-gradient(180deg, rgba(124,92,255,.35), rgba(124,92,255,.18));
+        color:var(--text);padding:10px 12px;border-radius:12px;font-weight:600;
+        cursor:pointer;
+      }
+      .btn:hover{border-color:rgba(255,255,255,.26)}
+      .muted{color:var(--muted);font-size:13px;line-height:1.5;margin:10px 0 0}
+      .list{margin:0;padding-left:18px;color:var(--muted);font-size:13px;line-height:1.55}
+      a{color:#b8c8ff}
+      .k{color:rgba(230,238,252,.92)}
+      .warn{
+        margin-top:10px;
+        background:rgba(255,177,66,.10);
+        border:1px solid rgba(255,177,66,.25);
+        padding:10px 12px;border-radius:12px;
+        color:rgba(255,230,200,.95);
+        font-size:13px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="hero">
+        <div>
+          <h1>Sirco APT Repo</h1>
+          <p class="sub">Static APT repository for <span class="k">sirco-*</span> meta-packages.</p>
+        </div>
+        <div class="badge">https://sirco-dev.github.io/sircron-setup/</div>
+      </div>
 
+      <div class="grid">
+        <div class="card">
+          <h2>Install</h2>
+          <div class="body">
+            <div class="row" style="justify-content:space-between">
+              <div class="muted" style="margin:0">Copy/paste into a terminal:</div>
+              <button class="btn" id="copy">Copy</button>
+            </div>
+            <pre class="code" id="snippet"><code>sudo tee /etc/apt/sources.list.d/sirco.list >/dev/null &lt;&lt;'EOF'
+deb [trusted=yes] https://sirco-dev.github.io/sircron-setup/ stable main
+EOF
 sudo apt-get update
-sudo apt-get install sirco-full
-</code></pre>
-<p>Note: this repo is unsigned; <code>[trusted=yes]</code> is required unless you add signing.</p>
+sudo apt-get install -y sirco-full</code></pre>
+            <div class="warn">Note: this repo is unsigned; <code>[trusted=yes]</code> is required unless you add signing.</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Troubleshooting</h2>
+          <div class="body">
+            <p class="muted" style="margin-top:0">If <code>apt-get update</code> 404s, check these URLs exist:</p>
+            <ul class="list">
+              <li><a href="./dists/stable/Release">./dists/stable/Release</a></li>
+              <li><a href="./dists/stable/main/binary-amd64/Packages">./dists/stable/main/binary-amd64/Packages</a></li>
+            </ul>
+            <p class="muted">GitHub Pages must be set to serve from <code>main</code> + <code>/docs</code>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        const btn = document.getElementById('copy');
+        const snippet = document.getElementById('snippet').innerText.trim();
+        btn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(snippet);
+            btn.textContent = 'Copied';
+            setTimeout(() => (btn.textContent = 'Copy'), 1200);
+          } catch {
+            btn.textContent = 'Copy failed';
+            setTimeout(() => (btn.textContent = 'Copy'), 1200);
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
 HTML
 
   popd >/dev/null
