@@ -1,0 +1,12 @@
+[Unit]
+Description=Sirco First Boot Setup
+After=network-online.target
+Wants=network-online.target
+ConditionPathExists=!/var/lib/sirco/sirco-firstboot.done
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/sirco-firstboot
+
+[Install]
+WantedBy=multi-user.target
