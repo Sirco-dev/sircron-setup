@@ -1,6 +1,6 @@
 # sircron-setup
 
-Debian/Ubuntu meta-packages + first-boot setup for the "Sirco" tool packs.
+Debian/Ubuntu meta-packages + GitHub Pages–hosted APT repo for the "Sirco" tool packs.
 
 ## Meta-packages (equivs)
 
@@ -32,15 +32,33 @@ sudo dpkg -i dist/sirco-dev_*_all.deb
 sudo apt-get -f install
 ```
 
-## First boot setup (systemd)
+## APT repository (GitHub Pages)
 
-Installs some baseline tools (including `make` and `snapd`) once, on first boot.
+This repo can publish a static APT repository to GitHub Pages.
 
-- Script: `firstboot/sirco-firstboot.sh`
-- Unit: `firstboot/sirco-firstboot.service`
-
-Install + enable:
+### Build the repo locally
 
 ```bash
-sudo ./scripts/install-firstboot.sh
+sudo apt-get update
+sudo apt-get install -y equivs dpkg-dev apt-utils
+./scripts/build-apt-repo.sh
 ```
+
+This writes a static repo to `public/` (with `dists/` + `pool/`).
+
+You can also drop extra prebuilt `.deb` files anywhere under `packages/` and they’ll be included in `pool/main/` when you run `./scripts/build-apt-repo.sh`.
+
+### Use it on a client machine
+
+Replace `<owner>` and `<repo>`:
+
+```bash
+sudo tee /etc/apt/sources.list.d/sirco.list <<EOF
+deb [trusted=yes] https://<owner>.github.io/<repo>/ stable main
+EOF
+
+sudo apt-get update
+sudo apt-get install sirco-full
+```
+
+Note: the repo is unsigned; `[trusted=yes]` is required unless you add signing.
