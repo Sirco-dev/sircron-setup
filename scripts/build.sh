@@ -271,7 +271,7 @@ EOF
       <div class="hero">
         <div>
           <h1>Sirco Packages</h1>
-          <p class="sub">Official APT repository for the Sirco distro package sets. Use this repository to install the public meta-packages for desktop, development, gaming, AI, and full workstation setups.</p>
+          <p class="sub">Official APT repository for the Sirco distro package sets. Use this repository to install the public meta-packages for desktop, development, gaming, AI, and full system setups.</p>
         </div>
         <div class="badge">https://sirco-dev.github.io/sircron-setup/</div>
       </div>
@@ -288,7 +288,7 @@ EOF
 deb [trusted=yes] https://sirco-dev.github.io/sircron-setup/ stable main
 EOF
 sudo apt-get update
-sudo apt-get install -y sirco-full</code></pre>
+sudo apt-get install -y sirco-all-desktop</code></pre>
             <div class="warn">Note: this repo is unsigned; <code>[trusted=yes]</code> is required unless you add signing.</div>
           </div>
         </div>
@@ -299,7 +299,7 @@ sudo apt-get install -y sirco-full</code></pre>
             <div class="packages">
               <div class="pkg">
                 <strong>sirco-desktop</strong>
-                GNOME desktop, login manager, and core desktop applications.
+                GNOME desktop, audio stack, login manager, and core desktop applications.
               </div>
               <div class="pkg">
                 <strong>sirco-dev</strong>
@@ -315,7 +315,11 @@ sudo apt-get install -y sirco-full</code></pre>
               </div>
               <div class="pkg">
                 <strong>sirco-full</strong>
-                Installs the full Sirco package set.
+                Installs the full Sirco non-desktop package set.
+              </div>
+              <div class="pkg">
+                <strong>sirco-all-desktop</strong>
+                Installs the full Sirco package set plus the desktop.
               </div>
             </div>
             <p class="footer">Repository files: <a href="./dists/stable/Release">Release</a> and <a href="./dists/stable/main/binary-amd64/Packages">Packages</a>.</p>

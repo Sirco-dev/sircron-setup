@@ -7,7 +7,8 @@ Packages:
 - `sirco-dev` for development tools
 - `sirco-gaming` for gaming tools
 - `sirco-ai` for AI/data/notebook tools
-- `sirco-full` for everything above
+- `sirco-full` for the full non-desktop package set
+- `sirco-all-desktop` for everything including the desktop
 
 Build locally (Debian/Ubuntu):
 
@@ -30,13 +31,19 @@ sudo tee /etc/apt/sources.list.d/sirco.list >/dev/null <<'EOF'
 deb [trusted=yes] https://sirco-dev.github.io/sircron-setup/ stable main
 EOF
 sudo apt-get update
-sudo apt-get install -y sirco-full
+sudo apt-get install -y sirco-all-desktop
 ```
 
 Desktop-only install:
 
 ```bash
 sudo apt-get install -y sirco-desktop
+```
+
+Full non-desktop install:
+
+```bash
+sudo apt-get install -y sirco-full
 ```
 
 If `apt-get update` 404s, verify these URLs exist:
@@ -47,7 +54,7 @@ If `apt-get update` 404s, verify these URLs exist:
 If install fails due to Steam/i386 dependencies, install without recommended packages:
 
 ```bash
-sudo apt-get install -y --no-install-recommends sirco-full
+sudo apt-get install -y --no-install-recommends sirco-all-desktop
 ```
 
 `sirco-desktop` includes a package post-install step that safely tries to:

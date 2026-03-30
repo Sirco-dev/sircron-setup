@@ -1,0 +1,11 @@
+Section: misc
+Priority: optional
+Standards-Version: 3.9.2
+
+Package: sirco-all-desktop
+Version: 1.0
+Maintainer: Sirco Team <info@gace.space>
+Depends: sirco-full, sirco-desktop
+Description: Sirco All + Desktop Pack (meta-package)
+ Installs the full Sirco package set and the GNOME desktop.
+ Legal contact: legal@gace.space
